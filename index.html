@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Amp Academy — Mastering the Electric Multimeter · course home · 2026-06-18 (SAS v1) -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mastering the Electric Multimeter — Amp Academy</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f1115">
+<link rel="apple-touch-icon" href="icons/icon.svg">
+<link rel="stylesheet" href="css/course.css">
+<link rel="stylesheet" href="css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Amp Academy</span>
+        <span class="lesson-type">Course Home</span>
+      </div>
+      <h1 class="lesson-h1">Mastering the Electric Multimeter</h1>
+      <p class="lesson-lead">A complete hands-on course — 8 lessons, 3 practical labs, and a final assessment.
+        Installs to your device and runs fully offline. Completion is earned; the certificate unlocks only after you pass the assessment.</p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0">
+        <a href="lessons/lesson-01.html" class="nav-btn primary" id="startBtn">Start the course →</a>
+        <a href="lessons/quiz-final.html" class="nav-btn">Final Assessment</a>
+        <a href="lessons/certificate.html" class="nav-btn">Certificate</a>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:1rem">
+        <div class="cert-card" style="text-align:left"><strong>Lessons 1–8</strong><br><span style="color:var(--muted)">What a multimeter is, anatomy, DC/AC voltage, current, resistance, continuity &amp; diode, capacitance &amp; frequency.</span></div>
+        <div class="cert-card" style="text-align:left"><strong>Labs 1–3</strong><br><span style="color:var(--muted)">Battery testing, outlet &amp; wiring checks, circuit-fault diagnosis — measurement craft, safety-forward.</span></div>
+        <div class="cert-card" style="text-align:left"><strong>Final Assessment</strong><br><span style="color:var(--muted)">Pass to earn your certificate. Honest record — no award without the pass.</span></div>
+      </div>
+
+      <p class="share-tip" style="margin-top:1.5rem">Tip: use your browser's <strong>Install</strong> option (or the button) to add this course to your home screen — it then works with no internet.</p>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="js/course.js"></script>
+<script>
+  initPage('index', 'Course Home');
+  // Continue-where-you-left-off: if any lesson is complete, point Start at the first unfinished one.
+  (function(){
+    try {
+      var order = COURSE_MANIFEST.filter(function(m){return m.type==='lesson'||m.type==='lab';});
+      var nextUp = order.find(function(m){ return !Progress.isComplete(m.id); });
+      if (nextUp && Progress.percent() > 0) {
+        var b = document.getElementById('startBtn');
+        b.textContent = 'Continue →'; b.href = nextUp.file;  // file is lessons/… (root-relative)
+      }
+    } catch(e){}
+  })();
+</script>
+</body>
+</html>

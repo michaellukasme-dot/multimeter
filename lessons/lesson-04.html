@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AC Voltage (V~) — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 04</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">AC Voltage (V~)</h1>
+      <p class="lesson-lead">Alternating current reverses direction at 60 Hz (North America) or 50 Hz (Europe). It's what powers your home and is significantly more dangerous than typical DC sources.</p>
+
+      <div class="settings-grid">
+        <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--amber)">V~</div><div class="setting-name">AC Voltage</div><div class="setting-desc">Measures mains power, transformer outputs, and AC signals. Displays RMS value.</div><div class="setting-range">Ranges: 200V / 600V / 750V</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--purple)">RMS</div><div class="setting-name">True-RMS</div><div class="setting-desc">Higher-end meters accurately measure non-sinusoidal waveforms (motor drives, inverters). Budget meters assume pure sine wave.</div><div class="setting-range">Important for VFDs &amp; UPS</div></div>
+      </div>
+
+      <div class="callout callout-danger"><span class="callout-icon">⚡</span><div><strong>DANGER — Mains voltage kills.</strong> 120V/240V AC is lethal. Use CAT III rated probes, keep fingers behind guard rings, never work alone on live circuits, and turn the breaker off whenever possible.</div></div>
+
+      <div class="section-title">AC vs DC Waveform</div>
+      <div class="meter-diagram">
+        <svg viewBox="0 0 400 120" style="width:100%;max-width:400px;display:block;margin:0 auto">
+          <text x="10" y="30" font-family="Space Mono,monospace" font-size="8" fill="#3b82f6">DC</text>
+          <line x1="30" y1="30" x2="390" y2="30" stroke="#3b82f6" stroke-width="2"/>
+          <text x="200" y="22" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#3b82f6">constant → one direction</text>
+          <text x="10" y="85" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b">AC</text>
+          <path d="M30,85 Q55,45 80,85 Q105,125 130,85 Q155,45 180,85 Q205,125 230,85 Q255,45 280,85 Q305,125 330,85 Q355,45 380,85" fill="none" stroke="#f59e0b" stroke-width="2"/>
+          <line x1="30" y1="85" x2="390" y2="85" stroke="#2e3545" stroke-width="0.5" stroke-dasharray="3"/>
+          <text x="200" y="116" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b">reverses direction 60×/sec (60Hz)</text>
+          <line x1="340" y1="55" x2="380" y2="55" stroke="#22c55e" stroke-width="1" stroke-dasharray="2"/>
+          <text x="318" y="52" font-family="Space Mono,monospace" font-size="7" fill="#22c55e">RMS</text>
+        </svg>
+      </div>
+
+      <div class="section-title">Practical Examples</div>
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Example 1 — Wall Outlet (120V USA)</div><div class="example-tag" style="background:var(--red-glow);color:var(--red)">High Voltage</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li>Set to <strong>V~</strong>, 200V range or higher.</li>
+            <li>Red into <strong>shorter (hot) slot</strong>, black into <strong>longer (neutral) slot</strong>.</li>
+            <li>Expected: <span class="reading-badge">110V – 125V</span></li>
+            <li>Move black to <strong>ground (round) hole</strong> — should read same as hot-to-neutral.</li>
+          </ol>
+          <div class="callout callout-warn" style="margin-top:.75rem"><span class="callout-icon">⚠</span><div>Reading below 105V suggests high resistance in the wiring. Reading 0V means dead outlet — check for tripped GFCI or breaker.</div></div>
+        </div>
+      </div>
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Example 2 — Transformer Output</div><div class="example-tag" style="background:var(--blue-glow);color:var(--blue)">AC Signal</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li>Set to <strong>V~</strong>, choose range above expected output.</li>
+            <li>Probe across secondary winding terminals.</li>
+            <li>A 12V AC transformer should read <span class="reading-badge">11V – 13V</span> under load.</li>
+            <li>Compare to label rating — more than 10% deviation suggests winding fault or overload.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="quiz-wrap">
+        <div class="quiz-q">What does "RMS" stand for in AC measurement?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" id="qopt-0-0" onclick="QuizEngine.select(0,0)"><span class="quiz-letter">A</span>Resistive Measured Signal</div>
+          <div class="quiz-opt" id="qopt-0-1" onclick="QuizEngine.select(0,1)"><span class="quiz-letter">B</span>Root Mean Square</div>
+          <div class="quiz-opt" id="qopt-0-2" onclick="QuizEngine.select(0,2)"><span class="quiz-letter">C</span>Relative Meter Scale</div>
+        </div>
+        <button class="quiz-check-btn" id="qbtn-0" onclick="QuizEngine.checkSingle(0,1,3)">Check Answer</button>
+        <div class="quiz-feedback" id="qfb-0"></div>
+      </div>
+      <div class="lesson-nav">
+        <a href="lesson-03.html" class="nav-btn">← Previous</a>
+        <a href="lesson-05.html" class="nav-btn primary">Current →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-04', 'AC Voltage (V~)');</script>
+</body>
+</html>

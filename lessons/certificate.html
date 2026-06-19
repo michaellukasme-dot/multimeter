@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Certificate — Mastering the Multimeter · Amp Academy</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+
+      <!-- Locked state: shown until the Final Assessment is passed (B-2 honest gate) -->
+      <div class="completion-screen" id="cert-locked" style="display:none">
+        <span class="trophy">🔒</span>
+        <h1 class="lesson-h1" style="text-align:center;font-size:28px">Certificate locked</h1>
+        <p style="text-align:center;color:var(--muted);margin-bottom:1.5rem">Pass the Final Assessment (5 of 6) to earn your certificate. Completion is earned, not awarded.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <a href="quiz-final.html" class="nav-btn primary">Go to the Final Assessment →</a>
+          <a href="../index.html" class="nav-btn">Back to Dashboard</a>
+        </div>
+      </div>
+
+      <!-- Earned certificate: only rendered after a real pass -->
+      <div class="completion-screen" id="cert-earned" style="display:none">
+        <span class="trophy">🏆</span>
+        <h1 class="lesson-h1" style="text-align:center;font-size:28px">Course Complete!</h1>
+        <p style="text-align:center;color:var(--muted);margin-bottom:2rem">You passed the assessment for Mastering the Electric Multimeter</p>
+        <div class="cert-card">
+          <div style="font-size:10px;font-family:var(--font-mono);color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem">Certificate of Completion</div>
+          <div style="font-family:var(--font-head);font-size:22px;font-weight:800;margin-bottom:.25rem;position:relative">Mastering the<br>Electric Multimeter</div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:1.5rem">Amp Academy</div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;border-top:1px solid var(--border);padding-top:1rem;margin-top:1rem">
+            <div><div style="color:var(--muted);font-size:10px;font-family:var(--font-mono);margin-bottom:2px">AWARDED TO</div><div style="font-weight:500" id="certName">Course Student</div></div>
+            <div style="text-align:right"><div style="color:var(--muted);font-size:10px;font-family:var(--font-mono);margin-bottom:2px">DATE</div><div id="certDate" style="font-weight:500"></div></div>
+          </div>
+          <div style="margin-top:1rem;padding:.6rem .8rem;background:var(--amber-glow);border:1px solid var(--amber-dim);border-radius:6px;font-family:var(--font-mono);font-size:10px;color:var(--amber);text-align:center">8 LESSONS · 3 LABS · ASSESSMENT PASSED</div>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap">
+          <button class="nav-btn primary" onclick="window.print()">Print / Save PDF</button>
+          <a href="lesson-01.html" class="nav-btn">Review Course</a>
+          <a href="../index.html" class="nav-btn">Back to Dashboard</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>
+  initPage('certificate', 'Certificate');
+  // B-2: verify the real pass state; never award on load.
+  if (Progress.isComplete('quiz-final')) {
+    document.getElementById('cert-earned').style.display = '';
+    document.getElementById('certDate').textContent = new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+    Progress.markComplete('certificate');
+    buildSidebar('certificate');
+  } else {
+    document.getElementById('cert-locked').style.display = '';
+  }
+</script>
+</body>
+</html>

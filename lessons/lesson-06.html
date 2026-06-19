@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resistance (Ω) — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 06</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">Resistance (Ω)</h1>
+<p class="lesson-lead">Resistance tells you how much a component opposes current flow. Always measure with the circuit <em>de-energized</em> and the component isolated from parallel paths.</p>
+<div class="settings-grid">
+  <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--purple)">Ω</div><div class="setting-name">Ohms</div><div class="setting-desc">Circuit must be powered off. Isolate component if possible to avoid parallel-path errors.</div><div class="setting-range">200Ω / 2kΩ / 20kΩ / 200kΩ / 2MΩ / 20MΩ</div></div>
+</div>
+<div class="callout callout-warn"><span class="callout-icon">⚠</span><div><strong>Power off first.</strong> Measuring on a live circuit gives false readings and can damage the meter. Discharge capacitors before probing in power supply circuits.</div></div>
+<div class="section-title">Resistor Color Code</div>
+<div class="meter-diagram">
+  <svg viewBox="0 0 400 80" style="width:100%;max-width:400px;display:block;margin:0 auto">
+    <rect x="100" y="25" width="200" height="30" rx="6" fill="#d4a017" stroke="#8a6010" stroke-width="1.5"/>
+    <rect x="120" y="25" width="14" height="30" rx="2" fill="#ef4444"/>
+    <rect x="142" y="25" width="14" height="30" rx="2" fill="#ef4444"/>
+    <rect x="164" y="25" width="14" height="30" rx="2" fill="#1a1a1a"/>
+    <rect x="200" y="25" width="14" height="30" rx="2" fill="#f59e0b"/>
+    <line x1="30" y1="40" x2="100" y2="40" stroke="#888" stroke-width="2"/>
+    <line x1="300" y1="40" x2="370" y2="40" stroke="#888" stroke-width="2"/>
+    <text x="127" y="70" font-family="Space Mono,monospace" font-size="7" fill="#ef4444" text-anchor="middle">RED=2</text>
+    <text x="149" y="70" font-family="Space Mono,monospace" font-size="7" fill="#ef4444" text-anchor="middle">RED=2</text>
+    <text x="171" y="70" font-family="Space Mono,monospace" font-size="7" fill="#888" text-anchor="middle">BLK=×1</text>
+    <text x="207" y="70" font-family="Space Mono,monospace" font-size="7" fill="#f59e0b" text-anchor="middle">GLD=±5%</text>
+    <text x="200" y="18" text-anchor="middle" font-family="Space Mono,monospace" font-size="9" fill="#a78bfa">= 22Ω ± 5%</text>
+  </svg>
+</div>
+<div class="example-card">
+  <div class="example-header"><div class="example-title">Example — Verifying a 10kΩ Resistor</div><div class="example-tag" style="background:var(--purple-dim);color:var(--purple)">Resistance</div></div>
+  <div class="example-body">
+    <ol class="step-list">
+      <li>Remove resistor from circuit (or fully de-power and isolate).</li>
+      <li>Set to <strong>Ω</strong>, 20kΩ range.</li>
+      <li>Probe across both leads — polarity doesn't matter.</li>
+      <li>5% tolerance: <span class="reading-badge">9.5kΩ – 10.5kΩ</span></li>
+    </ol>
+  </div>
+</div>
+<div class="example-card">
+  <div class="example-header"><div class="example-title">Example — Motor Winding Check</div><div class="example-tag" style="background:var(--purple-dim);color:var(--purple)">Resistance</div></div>
+  <div class="example-body">
+    <ol class="step-list">
+      <li>Disconnect motor from all power. Set to <strong>Ω</strong>, 200Ω range.</li>
+      <li>Probe across the two motor terminals.</li>
+      <li><span class="reading-badge">1Ω – 100Ω</span> = healthy. <span class="warning-badge">OL</span> = open winding (burned). <span class="warning-badge">0Ω</span> = shorted winding.</li>
+    </ol>
+  </div>
+</div>
+<div class="quiz-wrap">
+  <div class="quiz-q">You probe a component and see "OL". This means the resistance is ___?</div>
+  <div class="quiz-options">
+    <div class="quiz-opt" id="qopt-0-0" onclick="QuizEngine.select(0,0)"><span class="quiz-letter">A</span>Zero — it is shorted</div>
+    <div class="quiz-opt" id="qopt-0-1" onclick="QuizEngine.select(0,1)"><span class="quiz-letter">B</span>The correct range</div>
+    <div class="quiz-opt" id="qopt-0-2" onclick="QuizEngine.select(0,2)"><span class="quiz-letter">C</span>Infinite — open circuit</div>
+  </div>
+  <button class="quiz-check-btn" id="qbtn-0" onclick="QuizEngine.checkSingle(0,2,3)">Check Answer</button>
+  <div class="quiz-feedback" id="qfb-0"></div>
+</div>
+      <div class="lesson-nav">
+        <a href="lesson-05.html" class="nav-btn">← Previous</a>
+        <a href="lesson-07.html" class="nav-btn primary">Continuity &amp; Diode →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-06', 'Resistance (Ω)');</script>
+</body>
+</html>

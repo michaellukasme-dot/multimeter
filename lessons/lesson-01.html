@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What is a Multimeter? — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 01</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">What is an Electric Multimeter?</h1>
+      <p class="lesson-lead">A multimeter is the single most useful tool in any electrician's, engineer's, or hobbyist's toolkit — it measures voltage, current, resistance, and more from one handheld device.</p>
+
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><div><strong>Why learn this?</strong> Understanding your multimeter turns guesswork into precision. Whether you're troubleshooting a car battery, wiring a home circuit, or debugging an Arduino project, a multimeter gives you ground truth.</div></div>
+
+      <div class="section-title">The Multimeter at a Glance</div>
+      <div class="meter-diagram">
+        <div class="meter-svg-wrap">
+          <svg style="width:100%;max-width:240px;flex-shrink:0" viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="10" width="160" height="300" rx="18" fill="#1a1e27" stroke="#2e3545" stroke-width="1.5"/>
+            <rect x="35" y="25" width="130" height="70" rx="6" fill="#0a1a0a" stroke="#1a3a1a" stroke-width="1.5"/>
+            <text x="100" y="60" text-anchor="middle" font-family="Space Mono,monospace" font-size="22" font-weight="700" fill="#22c55e">12.34</text>
+            <text x="100" y="82" text-anchor="middle" font-family="Space Mono,monospace" font-size="9" fill="#4a8a5a">V DC AUTO</text>
+            <circle cx="100" cy="175" r="52" fill="#13161c" stroke="#2e3545" stroke-width="2"/>
+            <circle cx="100" cy="175" r="46" fill="#0c0e12" stroke="#252a35" stroke-width="1"/>
+            <text x="100" y="148" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#f59e0b">V⎓</text>
+            <text x="127" y="158" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#f59e0b">V~</text>
+            <text x="137" y="180" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#3b82f6">A</text>
+            <text x="126" y="200" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#3b82f6">mA</text>
+            <text x="100" y="210" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#a78bfa">Ω</text>
+            <text x="73" y="200" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#14b8a6">)))</text>
+            <text x="63" y="180" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#14b8a6">CAP</text>
+            <text x="74" y="158" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#22c55e">Hz</text>
+            <line x1="100" y1="175" x2="100" y2="135" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="100" cy="175" r="6" fill="#f59e0b"/>
+            <rect x="55" y="258" width="22" height="14" rx="3" fill="#0a0a0a" stroke="#3d4455" stroke-width="1"/>
+            <rect x="89" y="258" width="22" height="14" rx="3" fill="#0a0a0a" stroke="#3d4455" stroke-width="1"/>
+            <rect x="123" y="258" width="22" height="14" rx="3" fill="#0a0a0a" stroke="#3d4455" stroke-width="1"/>
+            <text x="66" y="268" text-anchor="middle" font-family="Space Mono,monospace" font-size="6" fill="#ef4444">10A</text>
+            <text x="100" y="268" text-anchor="middle" font-family="Space Mono,monospace" font-size="6" fill="#f59e0b">mAVΩ</text>
+            <text x="134" y="268" text-anchor="middle" font-family="Space Mono,monospace" font-size="6" fill="#6b7280">COM</text>
+            <rect x="55" y="115" width="36" height="18" rx="4" fill="#1a1e27" stroke="#2e3545" stroke-width="1"/>
+            <text x="73" y="127" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#6b7280">HOLD</text>
+            <rect x="109" y="115" width="36" height="18" rx="4" fill="#1a1e27" stroke="#2e3545" stroke-width="1"/>
+            <text x="127" y="127" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#6b7280">RANGE</text>
+          </svg>
+          <div class="meter-svg-labels">
+            <div class="label-item highlight"><div class="label-dot" style="background:var(--green)"></div><div><div class="label-name">LCD Display</div><div class="label-desc">Shows measured value, unit, and mode. Modern meters auto-range and show polarity.</div></div></div>
+            <div class="label-item highlight"><div class="label-dot" style="background:var(--amber)"></div><div><div class="label-name">Rotary Selector Dial</div><div class="label-desc">Switches between modes: DC voltage, AC voltage, current, resistance, continuity, and more.</div></div></div>
+            <div class="label-item"><div class="label-dot" style="background:var(--blue)"></div><div><div class="label-name">Test Lead Ports</div><div class="label-desc">Three ports: COM (black), VΩmA (red, everyday), 10A (red, high current only).</div></div></div>
+            <div class="label-item"><div class="label-dot" style="background:var(--muted)"></div><div><div class="label-name">HOLD Button</div><div class="label-desc">Freezes the reading — useful when you can't see the display while probing.</div></div></div>
+            <div class="label-item"><div class="label-dot" style="background:var(--muted)"></div><div><div class="label-name">RANGE Button</div><div class="label-desc">Fixes the measurement scale manually, overriding auto-range.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Multimeters come in two types: <strong>analog</strong> (needle + scale) and <strong>digital</strong> (LCD readout). This course focuses on <strong>digital multimeters (DMMs)</strong> — more accurate, easier to read, and the modern standard.</p>
+
+      <div class="callout callout-danger"><span class="callout-icon">⚡</span><div><strong>Safety first — always.</strong> Never measure current by placing probes in parallel. Never exceed the meter's rated voltage (usually 600V–1000V CAT III). Use insulated probes and keep fingers behind the guard rings.</div></div>
+
+      <div class="section-title">Quick Reference: What Can It Measure?</div>
+      <div class="settings-grid">
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--amber)">V⎓ / V~</div><div class="setting-name">Voltage</div><div class="setting-desc">DC (batteries, electronics) and AC (mains, transformers).</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--blue)">A / mA</div><div class="setting-name">Current</div><div class="setting-desc">How much charge flows — LEDs, motors, battery drain.</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--purple)">Ω</div><div class="setting-name">Resistance</div><div class="setting-desc">Opposition to current — resistors, windings, wire.</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--teal)">)))</div><div class="setting-name">Continuity</div><div class="setting-desc">Beeps if a path is electrically connected.</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--green)">Hz / C</div><div class="setting-name">Frequency &amp; Capacitance</div><div class="setting-desc">Signal frequency and capacitor value (advanced meters).</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--amber)">⊣</div><div class="setting-name">Diode Test</div><div class="setting-desc">Forward voltage drop of diodes and LEDs.</div></div>
+      </div>
+      <div class="lesson-nav">
+        <a href="../index.html" class="nav-btn">← Previous</a>
+        <a href="lesson-02.html" class="nav-btn primary">Anatomy &amp; Components →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-01', 'What is a Multimeter?');</script>
+</body>
+</html>

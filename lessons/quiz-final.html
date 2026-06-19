@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Final Assessment — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Assessment</span>
+        <span class="lesson-type type-test">Final Quiz</span>
+      </div>
+      <h1 class="lesson-h1">Final Assessment</h1>
+      <p class="lesson-lead">Answer all 6 questions. You need 5 correct to earn your certificate. Take your time — re-read each question carefully.</p>
+
+      <div id="quiz-container">
+        <div class="quiz-wrap" id="fq-0">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase">Question 1 of 6</div>
+          <div class="quiz-q">What mode is used to check if a fuse is blown?</div>
+          <div class="quiz-options">
+            <div class="quiz-opt" id="qopt-0-0" onclick="finalSelect(0,0)"><span class="quiz-letter">A</span>DC Voltage</div>
+            <div class="quiz-opt" id="qopt-0-1" onclick="finalSelect(0,1)"><span class="quiz-letter">B</span>Continuity )))</div>
+            <div class="quiz-opt" id="qopt-0-2" onclick="finalSelect(0,2)"><span class="quiz-letter">C</span>Resistance Ω</div>
+          </div>
+          <div class="quiz-feedback" id="qfb-0"></div>
+        </div>
+        <div class="quiz-wrap" id="fq-1">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase">Question 2 of 6</div>
+          <div class="quiz-q">Current measurement must be taken in ___?</div>
+          <div class="quiz-options">
+            <div class="quiz-opt" id="qopt-1-0" onclick="finalSelect(1,0)"><span class="quiz-letter">A</span>Parallel with the load</div>
+            <div class="quiz-opt" id="qopt-1-1" onclick="finalSelect(1,1)"><span class="quiz-letter">B</span>Series — circuit must be broken</div>
+            <div class="quiz-opt" id="qopt-1-2" onclick="finalSelect(1,2)"><span class="quiz-letter">C</span>The 10A port regardless of current</div>
+          </div>
+          <div class="quiz-feedback" id="qfb-1"></div>
+        </div>
+        <div class="quiz-wrap" id="fq-2">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase">Question 3 of 6</div>
+          <div class="quiz-q">A DC reading of −5.2V means ___?</div>
+          <div class="quiz-options">
+            <div class="quiz-opt" id="qopt-2-0" onclick="finalSelect(2,0)"><span class="quiz-letter">A</span>The meter is broken</div>
+            <div class="quiz-opt" id="qopt-2-1" onclick="finalSelect(2,1)"><span class="quiz-letter">B</span>The probes are reversed</div>
+            <div class="quiz-opt" id="qopt-2-2" onclick="finalSelect(2,2)"><span class="quiz-letter">C</span>The circuit is open</div>
+          </div>
+          <div class="quiz-feedback" id="qfb-2"></div>
+        </div>
+        <div class="quiz-wrap" id="fq-3">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase">Question 4 of 6</div>
+          <div class="quiz-q">Safe forward voltage for a silicon diode is ___?</div>
+          <div class="quiz-options">
+            <div class="quiz-opt" id="qopt-3-0" onclick="finalSelect(3,0)"><span class="quiz-letter">A</span>0.1V – 0.2V</div>
+            <div class="quiz-opt" id="qopt-3-1" onclick="finalSelect(3,1)"><span class="quiz-letter">B</span>0.5V – 0.7V</div>
+            <div class="quiz-opt" id="qopt-3-2" onclick="finalSelect(3,2)"><span class="quiz-letter">C</span>3.0V – 3.5V</div>
+          </div>
+          <div class="quiz-feedback" id="qfb-3"></div>
+        </div>
+        <div class="quiz-wrap" id="fq-4">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase">Question 5 of 6</div>
+          <div class="quiz-q">A running car engine should charge the battery at ___?</div>
+          <div class="quiz-options">
+            <div class="quiz-opt" id="qopt-4-0" onclick="finalSelect(4,0)"><span class="quiz-letter">A</span>12.0V – 12.6V</div>
+            <div class="quiz-opt" id="qopt-4-1" onclick="finalSelect(4,1)"><span class="quiz-letter">B</span>13.7V – 14.7V</div>
+            <div class="quiz-opt" id="qopt-4-2" onclick="finalSelect(4,2)"><span class="quiz-letter">C</span>15.5V – 16.0V</div>
+          </div>
+          <div class="quiz-feedback" id="qfb-4"></div>
+        </div>
+        <div class="quiz-wrap" id="fq-5">
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:.5rem;text-transform:uppercase">Question 6 of 6</div>
+          <div class="quiz-q">When you see OL during a resistance measurement, the component is ___?</div>
+          <div class="quiz-options">
+            <div class="quiz-opt" id="qopt-5-0" onclick="finalSelect(5,0)"><span class="quiz-letter">A</span>Shorted (zero ohms)</div>
+            <div class="quiz-opt" id="qopt-5-1" onclick="finalSelect(5,1)"><span class="quiz-letter">B</span>In the correct range</div>
+            <div class="quiz-opt" id="qopt-5-2" onclick="finalSelect(5,2)"><span class="quiz-letter">C</span>Open circuit (infinite resistance)</div>
+          </div>
+          <div class="quiz-feedback" id="qfb-5"></div>
+        </div>
+        <div style="margin-top:1.5rem">
+          <button class="quiz-check-btn" onclick="submitFinal()" id="submitBtn" style="font-size:14px;padding:.75rem 2rem">Submit Assessment</button>
+        </div>
+      </div>
+
+      <div id="result-box" style="display:none;margin-top:1.5rem">
+        <div class="meter-diagram" style="text-align:center;padding:2rem">
+          <div style="font-size:48px;margin-bottom:.75rem" id="resultEmoji">🎉</div>
+          <div style="font-family:var(--font-head);font-size:24px;font-weight:800;margin-bottom:.5rem" id="resultTitle"></div>
+          <div style="font-size:14px;color:var(--muted);margin-bottom:1.5rem" id="resultScore"></div>
+          <a href="certificate.html" class="nav-btn primary" style="display:inline-flex;margin:0 auto" id="certLink">View Certificate →</a>
+        </div>
+      </div>
+
+      <script>
+        const ANSWERS = {0:1, 1:1, 2:1, 3:1, 4:1, 5:2};
+        const userAnswers = {};
+        let submitted = false;
+        function finalSelect(q, i) {
+          if (submitted) return;
+          userAnswers[q] = i;
+          for (let j = 0; j < 3; j++) {
+            const el = document.getElementById('qopt-' + q + '-' + j);
+            if (el) el.classList.toggle('selected', j === i);
+          }
+        }
+        function submitFinal() {
+          if (Object.keys(userAnswers).length < 6) { return showToast('Please answer all 6 questions.'); }
+          submitted = true;
+          let score = 0;
+          for (let q = 0; q < 6; q++) {
+            const correct = ANSWERS[q];
+            const chosen  = userAnswers[q];
+            if (chosen === correct) score++;
+            for (let j = 0; j < 3; j++) {
+              const el = document.getElementById('qopt-' + q + '-' + j);
+              if (!el) continue;
+              if (j === chosen) el.classList.add(j === correct ? 'correct' : 'wrong');
+              if (j === correct) el.classList.add('correct');
+            }
+            const fb = document.getElementById('qfb-' + q);
+            if (fb) {
+              fb.className = 'quiz-feedback show ' + (chosen === correct ? 'right' : 'wrong-fb');
+              fb.textContent = chosen === correct ? '✓ Correct!' : '✗ The correct answer is highlighted.';
+            }
+          }
+          document.getElementById('submitBtn').style.display = 'none';
+          const passed = score >= 5;
+          const rb = document.getElementById('result-box');
+          rb.style.display = '';
+          document.getElementById('resultEmoji').textContent  = passed ? '🏆' : '📚';
+          document.getElementById('resultTitle').textContent  = passed ? 'Assessment Passed!' : 'Keep Studying';
+          document.getElementById('resultScore').textContent  = 'You scored ' + score + ' / 6. ' + (passed ? 'Certificate unlocked!' : 'Review the lessons and try again.');
+          if (!passed) { const cl = document.getElementById('certLink'); if (cl) cl.style.display = 'none'; }
+          if (passed) Progress.markComplete('quiz-final');
+        }
+      </script>
+      <div class="lesson-nav">
+        <a href="lab-03.html" class="nav-btn">← Previous</a>
+        <a href="certificate.html" class="nav-btn primary">Certificate →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('quiz-final', 'Final Assessment');</script>
+</body>
+</html>

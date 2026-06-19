@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab: Outlet & Wiring Tests — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lab 10</span>
+        <span class="lesson-type type-lab">Practical Lab</span>
+      </div>
+      <h1 class="lesson-h1">Lab: Outlet &amp; Wiring Tests</h1>
+      <p class="lesson-lead">A multimeter is your primary tool for home electrical diagnostics. These tests identify dead outlets, reversed wiring, missing grounds, and high-resistance connections — without tearing into walls.</p>
+
+      <div class="callout callout-danger"><span class="callout-icon">⚡</span><div><strong>High voltage present.</strong> Use CAT III 600V minimum probes. Work with one hand when possible (keeps current from crossing your heart). Know where your breaker panel is before starting.</div></div>
+
+      <div class="section-title">Standard Outlet Test Matrix (120V USA)</div>
+      <table class="data-table">
+        <thead><tr><th>Probe Placement</th><th style="color:var(--green)">Expected Reading</th><th>If Wrong Means…</th></tr></thead>
+        <tbody>
+          <tr><td>Hot (short slot) → Neutral (long slot)</td><td style="color:var(--green)">110V – 125V</td><td>0V = tripped breaker or GFCI</td></tr>
+          <tr><td>Hot → Ground (round hole)</td><td style="color:var(--green)">110V – 125V</td><td>0V = missing or broken ground</td></tr>
+          <tr><td>Neutral → Ground</td><td style="color:var(--green)">0V – 3V</td><td>&gt;5V = neutral lifted or open ground</td></tr>
+          <tr><td>Hot → Neutral (reversed outlet)</td><td style="color:var(--amber)">Same voltage, opposite polarity</td><td>Outlet wired backwards — rewire needed</td></tr>
+        </tbody>
+      </table>
+
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">High-Resistance Connection Test</div><div class="example-tag" style="background:var(--amber-glow);color:var(--amber)">Lab Exercise</div></div>
+        <div class="example-body">
+          <p style="font-size:13px;margin-bottom:.75rem">A connection can pass basic voltage tests but still have high resistance causing voltage drop under load (dim lights, slow motor, intermittent faults).</p>
+          <ol class="step-list">
+            <li>Plug in a known load (lamp). Measure voltage at the outlet under load.</li>
+            <li>Measure voltage at the breaker panel for the same circuit.</li>
+            <li>Difference should be less than <span class="reading-badge">3V</span>. More than 5V difference = high-resistance connection in wiring or terminals.</li>
+            <li>Switch to resistance mode (circuit OFF) and probe each terminal — connections should measure <span class="reading-badge">&lt; 0.5Ω</span>.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="lesson-nav">
+        <a href="lab-01.html" class="nav-btn">← Previous</a>
+        <a href="lab-03.html" class="nav-btn primary">Lab: Circuit Faults →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lab-02', 'Lab: Outlet & Wiring Tests');</script>
+</body>
+</html>

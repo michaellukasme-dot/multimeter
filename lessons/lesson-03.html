@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DC Voltage (V⎓) — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 03</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">DC Voltage (V⎓)</h1>
+      <p class="lesson-lead">Direct current flows in one direction — from positive to negative. It powers batteries, electronics, and automotive systems, and is the most common measurement you'll take.</p>
+
+      <div class="settings-grid">
+        <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--amber)">V⎓</div><div class="setting-name">DC Voltage</div><div class="setting-desc">Measures steady-state voltage in batteries, DC power supplies, and electronic circuits.</div><div class="setting-range">Ranges: 200mV / 2V / 20V / 200V / 600V</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--muted)">AUTO</div><div class="setting-name">Auto-Range</div><div class="setting-desc">Most meters auto-select the best range. On manual meters, start highest and work down.</div><div class="setting-range">Recommended for beginners</div></div>
+      </div>
+
+      <div class="section-title">Connection Diagram — DC Voltage (Parallel)</div>
+      <div class="meter-diagram">
+        <svg viewBox="0 0 440 160" style="width:100%;max-width:440px;display:block;margin:0 auto">
+          <rect x="30" y="60" width="50" height="40" rx="4" fill="#1a1e27" stroke="#2e3545" stroke-width="1.5"/>
+          <text x="55" y="77" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b">9V</text>
+          <text x="55" y="91" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#6b7280">BAT</text>
+          <line x1="30" y1="70" x2="20" y2="70" stroke="#888" stroke-width="2"/>
+          <line x1="80" y1="70" x2="90" y2="70" stroke="#ef4444" stroke-width="2"/>
+          <text x="85" y="67" font-family="Space Mono,monospace" font-size="9" fill="#ef4444">+</text>
+          <text x="15" y="67" font-family="Space Mono,monospace" font-size="9" fill="#888">−</text>
+          <line x1="90" y1="70" x2="160" y2="70" stroke="#ef4444" stroke-width="2"/>
+          <line x1="20" y1="70" x2="20" y2="130" stroke="#888" stroke-width="2"/>
+          <line x1="20" y1="130" x2="320" y2="130" stroke="#888" stroke-width="2"/>
+          <rect x="160" y="58" width="60" height="24" rx="4" fill="#1a1e27" stroke="#3d4455" stroke-width="1.5"/>
+          <text x="190" y="74" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#a78bfa">10kΩ</text>
+          <line x1="220" y1="70" x2="320" y2="70" stroke="#ef4444" stroke-width="2"/>
+          <line x1="320" y1="70" x2="320" y2="130" stroke="#888" stroke-width="2"/>
+          <line x1="160" y1="70" x2="160" y2="50" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3"/>
+          <line x1="220" y1="70" x2="220" y2="50" stroke="#888" stroke-width="1.5" stroke-dasharray="3"/>
+          <line x1="160" y1="50" x2="140" y2="20" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3"/>
+          <line x1="220" y1="50" x2="240" y2="20" stroke="#888" stroke-width="1.5" stroke-dasharray="3"/>
+          <rect x="140" y="5" width="100" height="35" rx="5" fill="#1a1e27" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="190" y="20" text-anchor="middle" font-family="Space Mono,monospace" font-size="9" fill="#22c55e">8.97</text>
+          <text x="190" y="32" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#4a8a5a">V DC</text>
+          <text x="140" y="150" font-family="Space Mono,monospace" font-size="8" fill="#ef4444" text-anchor="middle">V+ (red)</text>
+          <text x="240" y="150" font-family="Space Mono,monospace" font-size="8" fill="#888" text-anchor="middle">COM (black)</text>
+          <text x="370" y="90" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b">PARALLEL</text>
+        </svg>
+      </div>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><div><strong>Key rule:</strong> Voltage is always measured in <strong>parallel</strong> — red to + side, black to − side. The meter's ~10MΩ input impedance means it barely affects the circuit.</div></div>
+
+      <div class="section-title">Practical Examples</div>
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Example 1 — Testing a 9V Battery</div><div class="example-tag" style="background:var(--amber-glow);color:var(--amber)">DC Voltage</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li>Turn dial to <strong>V⎓</strong>.</li>
+            <li>Red probe → <strong>VΩmA port</strong>, black probe → <strong>COM port</strong>.</li>
+            <li>Red probe to battery <strong>+ terminal</strong>, black to <strong>− terminal</strong>.</li>
+            <li>Read the display.</li>
+          </ol>
+          <div style="margin-top:.75rem;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <span style="font-size:12px;color:var(--muted)">Healthy:</span><span class="reading-badge">8.5V – 9.5V</span>
+            <span style="font-size:12px;color:var(--muted)">Weak:</span><span class="reading-badge" style="background:#3a3000;border-color:#5a4a00;color:#FAC775">7.0V – 8.4V</span>
+            <span style="font-size:12px;color:var(--muted)">Dead:</span><span class="warning-badge">below 7V</span>
+          </div>
+        </div>
+      </div>
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Example 2 — Arduino 5V Pin</div><div class="example-tag" style="background:var(--blue-glow);color:var(--blue)">Electronics</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li>Set to <strong>V⎓</strong>, 20V range (or auto).</li>
+            <li>Black probe to Arduino <strong>GND pin</strong>.</li>
+            <li>Red probe to <strong>5V pin</strong>.</li>
+            <li><span class="reading-badge">4.75V – 5.25V</span> is within spec. Outside this suggests regulator or USB power issue.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Example 3 — Car 12V Accessory Socket</div><div class="example-tag" style="background:var(--amber-glow);color:var(--amber)">Automotive</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li>Set to <strong>V⎓</strong>, 20V range.</li>
+            <li>Ignition key to ACC or ON. Red probe to centre pin (hot), black to outer rim (ground).</li>
+            <li><span class="reading-badge">11.5V – 14.5V</span> = normal. Below 11V with key on = battery or wiring fault.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="quiz-wrap">
+        <div class="quiz-q">When measuring DC voltage, how must the probes be connected?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-question="0" id="qopt-0-0" onclick="QuizEngine.select(0,0)"><span class="quiz-letter">A</span>In series — break the circuit</div>
+          <div class="quiz-opt" data-question="0" id="qopt-0-1" onclick="QuizEngine.select(0,1)"><span class="quiz-letter">B</span>In parallel — across the component</div>
+          <div class="quiz-opt" data-question="0" id="qopt-0-2" onclick="QuizEngine.select(0,2)"><span class="quiz-letter">C</span>Only in the 10A port</div>
+        </div>
+        <button class="quiz-check-btn" id="qbtn-0" onclick="QuizEngine.checkSingle(0,1,3)">Check Answer</button>
+        <div class="quiz-feedback" id="qfb-0"></div>
+      </div>
+      <div class="lesson-nav">
+        <a href="lesson-02.html" class="nav-btn">← Previous</a>
+        <a href="lesson-04.html" class="nav-btn primary">AC Voltage →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-03', 'DC Voltage (V⎓)');</script>
+</body>
+</html>

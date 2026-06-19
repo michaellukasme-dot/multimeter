@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab: Battery Testing — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lab 09</span>
+        <span class="lesson-type type-lab">Practical Lab</span>
+      </div>
+      <h1 class="lesson-h1">Lab: Battery Testing</h1>
+      <p class="lesson-lead">Batteries behave differently under load. Open-circuit voltage can look healthy while the battery fails under real load. This lab covers comprehensive battery assessment across all common types.</p>
+
+      <div class="section-title">Voltage Reference Table</div>
+      <table class="data-table">
+        <thead><tr><th>Battery Type</th><th style="color:var(--green)">Healthy</th><th style="color:var(--amber)">Weak</th><th style="color:var(--red)">Replace</th></tr></thead>
+        <tbody>
+          <tr><td>AA / AAA (1.5V)</td><td style="color:var(--green)">≥ 1.4V</td><td style="color:var(--amber)">1.2V–1.4V</td><td style="color:var(--red)">≤ 1.2V</td></tr>
+          <tr><td>9V Block</td><td style="color:var(--green)">≥ 8.5V</td><td style="color:var(--amber)">7.0V–8.5V</td><td style="color:var(--red)">≤ 7.0V</td></tr>
+          <tr><td>12V Car battery</td><td style="color:var(--green)">12.6V–12.8V</td><td style="color:var(--amber)">12.0V–12.5V</td><td style="color:var(--red)">≤ 12.0V</td></tr>
+          <tr><td>Li-Ion cell (3.7V nom)</td><td style="color:var(--green)">4.0V–4.2V</td><td style="color:var(--amber)">3.5V–3.9V</td><td style="color:var(--red)">≤ 3.5V</td></tr>
+          <tr><td>CR2032 coin cell</td><td style="color:var(--green)">≥ 2.9V</td><td style="color:var(--amber)">2.5V–2.9V</td><td style="color:var(--red)">≤ 2.5V</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">Car Battery — Full 4-Step Diagnostic</div>
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Automotive 12V Battery Procedure</div><div class="example-tag" style="background:var(--amber-glow);color:var(--amber)">Lab Exercise</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li><strong>Static test:</strong> Ignition OFF. Set V⎓ 20V. Red → + terminal, black → −. Record resting voltage.</li>
+            <li><strong>Load test:</strong> Turn on headlights. Re-measure. Must stay above <span class="reading-badge">11.5V</span> — if not, battery capacity is failing.</li>
+            <li><strong>Cranking test:</strong> While someone cranks the engine, watch voltage. Must stay above <span class="reading-badge">9.6V</span>. Lower = weak battery or corroded cable.</li>
+            <li><strong>Charging check:</strong> Engine running. Measure battery terminals. Should read <span class="reading-badge">13.7V – 14.7V</span> — alternator charging. Outside this = alternator problem.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Li-Ion Cell Assessment (e.g. 18650)</div><div class="example-tag" style="background:var(--teal-glow);color:var(--teal)">Lab Exercise</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li>Set V⎓, 20V range. Red → positive end, black → negative end.</li>
+            <li>Full charge: <span class="reading-badge">4.1V – 4.2V</span> &nbsp; Storage OK: <span class="reading-badge">3.6V – 3.9V</span></li>
+            <li>Below 3.0V: <span class="warning-badge">over-discharged — may be damaged</span></li>
+            <li>Never charge a Li-Ion below 2.5V — risk of internal short and thermal runaway.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="lesson-nav">
+        <a href="lesson-08.html" class="nav-btn">← Previous</a>
+        <a href="lab-02.html" class="nav-btn primary">Lab: Outlet &amp; Wiring →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lab-01', 'Lab: Battery Testing');</script>
+</body>
+</html>

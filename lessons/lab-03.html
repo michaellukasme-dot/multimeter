@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab: Finding Circuit Faults — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lab 11</span>
+        <span class="lesson-type type-lab">Practical Lab</span>
+      </div>
+      <h1 class="lesson-h1">Lab: Finding Circuit Faults</h1>
+      <p class="lesson-lead">Systematic fault-finding combines voltage, resistance, and continuity measurements. The three faults you'll encounter most are opens, shorts, and high-resistance connections.</p>
+
+      <div class="settings-grid">
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--red)">OPEN</div><div class="setting-name">Open Circuit</div><div class="setting-desc">Break in the path. No current flows. Continuity: silent. Resistance: OL.</div><div class="setting-range">Symptom: nothing works</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--amber)">SHORT</div><div class="setting-name">Short Circuit</div><div class="setting-desc">Unintended low-R path. Voltage across it ≈ 0V. Resistance: near 0Ω.</div><div class="setting-range">Symptom: breaker trips</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--blue)">HiR</div><div class="setting-name">High Resistance</div><div class="setting-desc">Corroded joint, loose terminal. Circuit works poorly. Voltage drop detected.</div><div class="setting-range">Symptom: dim, slow, intermittent</div></div>
+      </div>
+
+      <div class="section-title">Half-Splitting Method (Open Circuit)</div>
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Procedure: Locating an Open in a Series Circuit</div><div class="example-tag" style="background:var(--blue-glow);color:var(--blue)">Fault Finding</div></div>
+        <div class="example-body">
+          <p style="font-size:13px;margin-bottom:.75rem">Voltage appears <em>before</em> the open and disappears <em>after</em> it. Halve the circuit each probe placement to locate the fault efficiently.</p>
+          <ol class="step-list">
+            <li>Set V⎓. Measure at source — confirm supply voltage is present.</li>
+            <li>Probe midpoint. Full voltage → open is past this point. Zero → open is before it.</li>
+            <li>Continue halving until voltage vanishes between two adjacent points.</li>
+            <li>That segment contains the open — broken wire, failed component, or bad connection.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header"><div class="example-title">Procedure: Finding a Short to Ground</div><div class="example-tag" style="background:var(--red-glow);color:var(--red)">Fault Finding</div></div>
+        <div class="example-body">
+          <ol class="step-list">
+            <li>Remove fuse / turn off power. Set to continuity mode.</li>
+            <li>Probe from each circuit node to chassis ground.</li>
+            <li>A <span class="warning-badge">BEEP</span> where there should be silence = short to ground at that node.</li>
+            <li>Trace the wiring at that node for pinched insulation, solder bridges, or wet connector.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="quiz-wrap">
+        <div class="quiz-q">You measure 12V at point A and 0V at adjacent point B. The open fault is located ___?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" id="qopt-0-0" onclick="QuizEngine.select(0,0)"><span class="quiz-letter">A</span>Before point A</div>
+          <div class="quiz-opt" id="qopt-0-1" onclick="QuizEngine.select(0,1)"><span class="quiz-letter">B</span>Between point A and point B</div>
+          <div class="quiz-opt" id="qopt-0-2" onclick="QuizEngine.select(0,2)"><span class="quiz-letter">C</span>After point B</div>
+        </div>
+        <button class="quiz-check-btn" id="qbtn-0" onclick="QuizEngine.checkSingle(0,1,3)">Check Answer</button>
+        <div class="quiz-feedback" id="qfb-0"></div>
+      </div>
+      <div class="lesson-nav">
+        <a href="lab-02.html" class="nav-btn">← Previous</a>
+        <a href="quiz-final.html" class="nav-btn primary">Final Assessment →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lab-03', 'Lab: Finding Circuit Faults');</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Current Measurement (A / mA) — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 05</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">Current Measurement (A / mA)</h1>
+<p class="lesson-lead">Current is measured <em>in series</em> — you must break the circuit and insert the meter inline. Getting this wrong blows the fuse or damages the circuit.</p>
+<div class="settings-grid">
+  <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--blue)">mA</div><div class="setting-name">Milliamps</div><div class="setting-desc">Small currents: LEDs, sensors, MCU pins. Red → mAVΩ port.</div><div class="setting-range">200µA / 2mA / 20mA / 200mA</div></div>
+  <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--red)">10A</div><div class="setting-name">Amps (High)</div><div class="setting-desc">Motors, car batteries, appliances. Move red to 10A port. 30-second limit.</div><div class="setting-range">Max 10A — dedicated port</div></div>
+</div>
+<div class="callout callout-danger"><span class="callout-icon">⚡</span><div><strong>Critical:</strong> Current MUST be measured <strong>in series</strong>. Connecting in parallel creates a near-short that blows the fuse instantly and can damage the meter or cause a fire.</div></div>
+<div class="section-title">Series Connection Diagram</div>
+<div class="meter-diagram">
+  <svg viewBox="0 0 440 130" style="width:100%;max-width:440px;display:block;margin:0 auto">
+    <rect x="20" y="50" width="50" height="35" rx="4" fill="#1a1e27" stroke="#2e3545" stroke-width="1.5"/>
+    <text x="45" y="71" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#f59e0b">9V</text>
+    <line x1="70" y1="57" x2="120" y2="57" stroke="#ef4444" stroke-width="2"/>
+    <rect x="120" y="45" width="80" height="25" rx="5" fill="#1a1e27" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="160" y="57" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#22c55e">0.025</text>
+    <text x="160" y="66" text-anchor="middle" font-family="Space Mono,monospace" font-size="7" fill="#4a8a5a">A (25mA)</text>
+    <line x1="200" y1="57" x2="260" y2="57" stroke="#ef4444" stroke-width="2"/>
+    <rect x="260" y="45" width="60" height="25" rx="4" fill="#1a1e27" stroke="#3d4455" stroke-width="1.5"/>
+    <text x="290" y="62" text-anchor="middle" font-family="Space Mono,monospace" font-size="9" fill="#a78bfa">360Ω</text>
+    <line x1="320" y1="57" x2="380" y2="57" stroke="#ef4444" stroke-width="2"/>
+    <line x1="380" y1="57" x2="380" y2="100" stroke="#888" stroke-width="2"/>
+    <line x1="380" y1="100" x2="20" y2="100" stroke="#888" stroke-width="2"/>
+    <line x1="20" y1="100" x2="20" y2="72" stroke="#888" stroke-width="2"/>
+    <text x="160" y="120" text-anchor="middle" font-family="Space Mono,monospace" font-size="8" fill="#3b82f6">SERIES — circuit broken, meter inserted inline</text>
+  </svg>
+</div>
+<div class="example-card">
+  <div class="example-header"><div class="example-title">Example — LED Current Draw</div><div class="example-tag" style="background:var(--blue-glow);color:var(--blue)">Series Circuit</div></div>
+  <div class="example-body">
+    <ol class="step-list">
+      <li>Turn off circuit. Set to <strong>mA DC</strong>. Red probe → <strong>mAVΩ port</strong>.</li>
+      <li>Disconnect one wire from the LED to break the series path.</li>
+      <li>Insert meter: red to wire from +, black to component.</li>
+      <li>Power on and read.</li>
+    </ol>
+    <div style="margin-top:.75rem;display:flex;gap:8px;flex-wrap:wrap">
+      <span style="font-size:12px;color:var(--muted)">Normal LED:</span><span class="reading-badge">15mA – 25mA</span>
+      <span style="font-size:12px;color:var(--muted)">Over-driven:</span><span class="warning-badge">&gt;30mA</span>
+    </div>
+  </div>
+</div>
+      <div class="lesson-nav">
+        <a href="lesson-04.html" class="nav-btn">← Previous</a>
+        <a href="lesson-06.html" class="nav-btn primary">Resistance →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-05', 'Current Measurement (A / mA)');</script>
+</body>
+</html>

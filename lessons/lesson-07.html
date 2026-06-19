@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Continuity & Diode Test — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 07</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">Continuity &amp; Diode Test</h1>
+<p class="lesson-lead">Continuity is the fastest circuit check you have — a beep confirms a connected path in under a second. The diode test verifies semiconductor junctions without a separate component.</p>
+<div class="settings-grid">
+  <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--teal)">)))</div><div class="setting-name">Continuity</div><div class="setting-desc">Beeps when resistance &lt;~50Ω. Circuit must be de-energized. Tests fuses, switches, wires, PCB traces.</div><div class="setting-range">Beep ≈ &lt;50Ω path</div></div>
+  <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--amber)">⊣</div><div class="setting-name">Diode Test</div><div class="setting-desc">Applies ~2V. Shows forward voltage drop. Tests diodes, LEDs, and BJT junctions.</div><div class="setting-range">Si diode: 0.5V – 0.7V</div></div>
+</div>
+<div class="section-title">Interpreting Results</div>
+<div class="settings-grid">
+  <div class="setting-card"><div class="setting-symbol" style="font-size:16px;color:var(--teal)">🔊 BEEP</div><div class="setting-name">Connected</div><div class="setting-desc">Good wire, closed switch, healthy fuse, or two PCB pads that should be linked.</div></div>
+  <div class="setting-card"><div class="setting-symbol" style="font-size:16px">🔇 Silent</div><div class="setting-name">Open circuit</div><div class="setting-desc">Broken wire, blown fuse, open switch, or disconnected pad.</div></div>
+  <div class="setting-card"><div class="setting-symbol" style="font-size:16px;color:var(--red)">🔊 Unexpected</div><div class="setting-name">Unwanted short</div><div class="setting-desc">Two traces that should be isolated are connected — solder bridge, pinched wire.</div></div>
+</div>
+<div class="example-card">
+  <div class="example-header"><div class="example-title">Example 1 — Fuse Test</div><div class="example-tag" style="background:var(--teal-glow);color:var(--teal)">Continuity</div></div>
+  <div class="example-body">
+    <ol class="step-list">
+      <li>Remove fuse from holder (never test in-circuit with power on).</li>
+      <li>Set to continuity mode <strong>)))</strong>.</li>
+      <li>One probe to each end of fuse.</li>
+      <li><span class="info-badge">BEEP</span> = good fuse. <span class="warning-badge">Silent / OL</span> = blown fuse, replace it.</li>
+    </ol>
+  </div>
+</div>
+<div class="example-card">
+  <div class="example-header"><div class="example-title">Example 2 — Diode Forward Voltage</div><div class="example-tag" style="background:var(--amber-glow);color:var(--amber)">Diode</div></div>
+  <div class="example-body">
+    <ol class="step-list">
+      <li>Set to <strong>diode symbol ⊣</strong>.</li>
+      <li>Red probe to diode <strong>Anode (+)</strong>, black to <strong>Cathode (−)</strong> (banded end).</li>
+      <li>Read forward voltage. Reverse probes — should show <span class="reading-badge">OL</span>.</li>
+    </ol>
+    <div style="margin-top:.75rem;display:flex;gap:8px;flex-wrap:wrap">
+      <span style="font-size:12px;color:var(--muted)">Silicon:</span><span class="reading-badge">0.5V–0.7V</span>
+      <span style="font-size:12px;color:var(--muted)">Red LED:</span><span class="reading-badge">1.8V–2.2V</span>
+      <span style="font-size:12px;color:var(--muted)">Blue/White LED:</span><span class="reading-badge">3.0V–3.4V</span>
+    </div>
+  </div>
+</div>
+      <div class="lesson-nav">
+        <a href="lesson-06.html" class="nav-btn">← Previous</a>
+        <a href="lesson-08.html" class="nav-btn primary">Capacitance &amp; Frequency →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-07', 'Continuity & Diode Test');</script>
+</body>
+</html>

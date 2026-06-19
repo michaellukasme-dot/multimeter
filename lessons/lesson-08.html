@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capacitance & Frequency — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 08</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">Capacitance &amp; Frequency</h1>
+<p class="lesson-lead">Advanced meters include capacitance (C in Farads) and frequency (Hz) modes — invaluable for checking timing circuits, capacitor health, and signal quality.</p>
+<div class="settings-grid">
+  <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--teal)">C (F)</div><div class="setting-name">Capacitance</div><div class="setting-desc">Measures charge storage. Identifies failed or drifted capacitors. Discharge before testing.</div><div class="setting-range">nF / µF — discharge first!</div></div>
+  <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--green)">Hz</div><div class="setting-name">Frequency</div><div class="setting-desc">Cycles per second. Checks oscillators, PWM signals, mains frequency.</div><div class="setting-range">Up to 10MHz on most meters</div></div>
+</div>
+<div class="callout callout-warn"><span class="callout-icon">⚠</span><div><strong>Always discharge capacitors first!</strong> Large electrolytic caps (especially from power supplies) can hold dangerous charge. Short through a 10kΩ resistor for 5+ seconds before probing.</div></div>
+<div class="example-card">
+  <div class="example-header"><div class="example-title">Example 1 — Verifying a 100µF Cap</div><div class="example-tag" style="background:var(--teal-glow);color:var(--teal)">Capacitance</div></div>
+  <div class="example-body">
+    <ol class="step-list">
+      <li>Remove cap, discharge through 10kΩ for 5 seconds.</li>
+      <li>Set meter to <strong>µF</strong> or <strong>C</strong> mode.</li>
+      <li>Red → positive (longer) lead, black → negative (shorter).</li>
+      <li>100µF ±20%: <span class="reading-badge">80µF – 120µF</span>. Below 50µF suggests aging or failure.</li>
+    </ol>
+  </div>
+</div>
+<div class="example-card">
+  <div class="example-header"><div class="example-title">Example 2 — Mains Frequency Check</div><div class="example-tag" style="background:var(--green-dim);color:var(--green)">Frequency</div></div>
+  <div class="example-body">
+    <ol class="step-list">
+      <li>Set to <strong>Hz</strong>. Connect probes to AC outlet (same as V~ test).</li>
+      <li>USA/Canada: <span class="reading-badge">59.5Hz – 60.5Hz</span> &nbsp; Europe: <span class="reading-badge">49.5Hz – 50.5Hz</span></li>
+      <li>Significant deviation signals grid instability — important for sensitive lab equipment.</li>
+    </ol>
+  </div>
+</div>
+      <div class="lesson-nav">
+        <a href="lesson-07.html" class="nav-btn">← Previous</a>
+        <a href="lab-01.html" class="nav-btn primary">Lab: Battery Testing →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-08', 'Capacitance & Frequency');</script>
+</body>
+</html>

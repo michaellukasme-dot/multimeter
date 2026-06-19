@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anatomy & Components — Mastering the Multimeter</title>
+<link rel="stylesheet" href="../css/course.css">
+<link rel="stylesheet" href="../css/tutor.css">
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="main">
+    <div class="lesson-wrap fade-in">
+      <div class="lesson-meta">
+        <span class="lesson-num">Lesson 02</span>
+        <span class="lesson-type type-lesson">Lesson</span>
+      </div>
+      <h1 class="lesson-h1">Anatomy &amp; Components</h1>
+      <p class="lesson-lead">Before you take a single measurement, know your tool. Each port, button, and dial marking has a specific purpose — using the wrong one can damage the meter or create a hazard.</p>
+
+      <div class="section-title">Test Lead Ports</div>
+      <div class="settings-grid">
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--red)">10A</div><div class="setting-name">High-Current Input</div><div class="setting-desc">Red probe for currents above 200mA only. No fuse protection — time-limited to 30 seconds.</div><div class="setting-range" style="color:var(--red)">⚠ Max 10A</div></div>
+        <div class="setting-card active-card"><div class="setting-symbol" style="color:var(--amber)">VΩmA</div><div class="setting-name">Main Input</div><div class="setting-desc">Red probe for voltage, resistance, capacitance, continuity, diode, and low current. Your everyday port.</div><div class="setting-range">Fused — most measurements</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--muted)">COM</div><div class="setting-name">Common / Ground</div><div class="setting-desc">Black probe always goes here. This is the reference for all measurements. Never swap probes in this port.</div><div class="setting-range">Always black lead</div></div>
+      </div>
+
+      <div class="callout callout-warn"><span class="callout-icon">⚠</span><div><strong>Probe condition matters.</strong> Cracked insulation, exposed wire, or bent pins are shock hazards. Inspect before every use — replace damaged leads immediately.</div></div>
+
+      <div class="section-title">Test Lead Anatomy</div>
+      <div class="meter-diagram">
+        <svg viewBox="0 0 400 110" style="width:100%;max-width:400px;display:block;margin:0 auto">
+          <line x1="20" y1="35" x2="200" y2="35" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+          <rect x="200" y="25" width="30" height="20" rx="3" fill="#ef4444"/>
+          <line x1="230" y1="35" x2="330" y2="35" stroke="#ef4444" stroke-width="4"/>
+          <polygon points="330,28 354,35 330,42" fill="#ef4444"/>
+          <text x="130" y="24" font-family="Space Mono,monospace" font-size="9" fill="#ef4444" text-anchor="middle">RED PROBE — VΩmA</text>
+          <line x1="20" y1="78" x2="200" y2="78" stroke="#888" stroke-width="4" stroke-linecap="round"/>
+          <rect x="200" y="68" width="30" height="20" rx="3" fill="#555"/>
+          <line x1="230" y1="78" x2="330" y2="78" stroke="#888" stroke-width="4"/>
+          <polygon points="330,71 354,78 330,85" fill="#888"/>
+          <text x="130" y="66" font-family="Space Mono,monospace" font-size="9" fill="#888" text-anchor="middle">BLACK PROBE — COM</text>
+          <rect x="300" y="24" width="12" height="20" rx="2" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2"/>
+          <rect x="300" y="67" width="12" height="20" rx="2" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="2"/>
+          <text x="370" y="52" font-family="Space Mono,monospace" font-size="7" fill="#f59e0b" text-anchor="middle">guard rings</text>
+          <line x1="355" y1="52" x2="362" y2="52" stroke="#f59e0b" stroke-width="1"/>
+        </svg>
+        <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.5rem">Guard rings prevent fingers from sliding onto the metal tip — never probe without them</p>
+      </div>
+
+      <div class="section-title">Reading the Display</div>
+      <div class="settings-grid">
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--green)">12.34</div><div class="setting-name">Normal reading</div><div class="setting-desc">Value is within range. Unit shown on right (V, mA, Ω, etc.).</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--red)">OL</div><div class="setting-name">Overload</div><div class="setting-desc">Reading exceeds range. Switch to higher range or let auto-range select.</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--amber)">−5.2</div><div class="setting-name">Negative polarity</div><div class="setting-desc">On DC, red probe is at lower potential than black. Swap probes or note reversed polarity.</div></div>
+        <div class="setting-card"><div class="setting-symbol" style="color:var(--muted)">0.000</div><div class="setting-name">Zero / continuity</div><div class="setting-desc">For resistance: dead short. For voltage: no potential difference across measurement points.</div></div>
+      </div>
+
+      <div class="section-title">CAT Safety Ratings</div>
+      <p>All meters and probes carry a <strong>CAT (Category) rating</strong> that defines what environments they are safe to use in:</p>
+      <table class="data-table">
+        <thead><tr><th>Rating</th><th>Use Case</th><th>Max Transient</th></tr></thead>
+        <tbody>
+          <tr><td>CAT I</td><td>Low-energy circuits, signal levels</td><td>800V</td></tr>
+          <tr><td>CAT II</td><td>Single-phase receptacles, portable tools</td><td>1000V</td></tr>
+          <tr><td><strong style="color:var(--amber)">CAT III</strong></td><td>Distribution panels, fixed installations</td><td>2500V</td></tr>
+          <tr><td>CAT IV</td><td>Utility service entrance, outdoor lines</td><td>4000V</td></tr>
+        </tbody>
+      </table>
+      <div class="callout callout-tip"><span class="callout-icon">💡</span><div>For general home electrical work, a <strong>CAT III 600V</strong> meter and matching probes is the minimum safe standard. Never use a lower-rated meter in a higher-risk environment.</div></div>
+      <div class="lesson-nav">
+        <a href="lesson-01.html" class="nav-btn">← Previous</a>
+        <a href="lesson-03.html" class="nav-btn primary">DC Voltage →</a>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="tutor-widget"></div>
+<button id="tutor-tab" onclick="toggleTutor()">Ask Tutor</button>
+<div class="toast" id="toast"></div>
+<script src="../js/course.js"></script>
+<script>initPage('lesson-02', 'Anatomy & Components');</script>
+</body>
+</html>
