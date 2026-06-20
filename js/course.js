@@ -126,6 +126,11 @@ const Tutor = {
     + "server when connected (no answers are made up here). Quick help below; ask your instructor for the rest.",
   ask() { return Promise.resolve(this.offlineNotice); }
 };
+/* Expose on window so the relay adapter (aa-tutor-relay.js) can find + upgrade it.
+ * Top-level `const` does NOT attach to window; without this the adapter bails and the
+ * tutor stays offline even when the relay is live. sendTutorMessage() calls Tutor.ask,
+ * and window.Tutor === Tutor (same object), so the adapter's .ask override takes effect. */
+window.Tutor = Tutor;
 function buildTutorWidget() {
   const widget = document.getElementById('tutor-widget');
   if (!widget) return;
