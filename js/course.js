@@ -146,7 +146,7 @@ function buildTutorWidget() {
       <button onclick="toggleTutor()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px" title="Minimize">−</button>
     </div>
     <div class="tutor-messages" id="tutor-messages">
-      <div class="tutor-msg tutor-msg-ai">Hi! This lesson's tutor is offline in the free version. Use the suggestions below, or connect online for the live tutor.</div>
+      <div class="tutor-msg tutor-msg-ai">Hi! Ask me about this lesson — when you're online I'll answer live and cite the Code; offline, the suggestions below still work.</div>
     </div>
     <div class="tutor-input-row">
       <input id="tutor-input" type="text" placeholder="Ask a question…" autocomplete="off" onkeydown="if(event.key==='Enter') sendTutorMessage()" />

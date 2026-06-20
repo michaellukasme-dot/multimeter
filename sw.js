@@ -2,7 +2,7 @@
    Offline-first runtime cache. Structure-agnostic: caches each successful
    same-origin GET (shell, lessons, css, js, fonts) so the course works offline
    after first visit. Bump CACHE on any shipped asset change. */
-const CACHE = 'aa-mm-v3';   /* v3: tutor relay live + window.Tutor exposure fix 2026-06-19 */
+const CACHE = 'aa-mm-v4';   /* v3: tutor relay live + window.Tutor exposure fix 2026-06-19 */
 
 self.addEventListener('install', e => { self.skipWaiting(); });
 
