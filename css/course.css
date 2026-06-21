@@ -6,17 +6,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-  --bg: #0c0e12;
-  --surface: #13161c;
-  --surface2: #1a1e27;
-  --border: #252a35;
-  --border2: #2e3545;
-  --text: #e8eaf0;
-  --muted: #6b7280;
+  --bg: #0E1422;
+  --surface: #161E2E;
+  --surface2: #1E2740;
+  --border: #2A3550;
+  --border2: #2E3545;
+  --text: #EAEEF6;
+  --muted: #9AA4B6;
   --dim: #3d4455;
-  --amber: #f59e0b;
+  --amber: #F2A93B;
   --amber-dim: #78490a;
-  --amber-glow: #f59e0b22;
+  --amber-glow: #F2A93B14;
   --teal: #14b8a6;
   --teal-dim: #0a4a44;
   --teal-glow: #14b8a622;
@@ -370,3 +370,5 @@ em { color: var(--amber); font-style: normal; }
   .app.nav-open .sidebar{transform:none;box-shadow:0 0 0 9999px rgba(0,0,0,.45)}
   .main{padding-top:52px}
 }
+html[data-theme="light"]{--bg:#F6F8FC;--surface:#FFFFFF;--surface2:#EEF2F8;--border:#D8E0EC;--text:#16202E;--muted:#5A6472}
+.aa-tgl{position:fixed;top:10px;right:12px;z-index:99999;font-size:15px;line-height:1;background:rgba(20,30,50,.55);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 10px;cursor:pointer}
