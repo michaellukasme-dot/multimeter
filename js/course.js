@@ -139,7 +139,7 @@ function buildTutorWidget() {
       <div style="display:flex;align-items:center;gap:8px">
         <div class="tutor-avatar"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h10v7H7l-3 3v-3H3z"/></svg></div>
         <div>
-          <div style="font-family:var(--font-head);font-size:13px;font-weight:700">Tutor</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700">Ask Sader</div>
           <div style="font-size:10px;color:var(--muted);font-family:var(--font-mono)">offline</div>
         </div>
       </div>
@@ -215,3 +215,9 @@ function initPage(lessonId, lessonTitle) {
     setTimeout(mark, 300); // short pages already at the end
   }
 }
+
+/* AA dark/light toggle (UX standard) — runs on every player page */
+(function(){try{var t=localStorage.getItem("aa.theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}
+window.aaTgl=function(){var h=document.documentElement,d=h.getAttribute("data-theme")==="light";h.setAttribute("data-theme",d?"dark":"light");try{localStorage.setItem("aa.theme",d?"dark":"light")}catch(e){}};
+function mk(){if(document.querySelector(".aa-tgl"))return;var b=document.createElement("button");b.className="aa-tgl";b.textContent="◐";b.setAttribute("onclick","aaTgl()");b.setAttribute("aria-label","Toggle light or dark");document.body.appendChild(b);}
+if(document.readyState!=="loading")mk();else document.addEventListener("DOMContentLoaded",mk);})();

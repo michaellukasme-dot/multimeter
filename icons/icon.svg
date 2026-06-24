@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Amp Academy">
-  <rect width="512" height="512" rx="96" fill="#0f1115"/>
-  <path d="M286 64 L150 286 h84 l-30 162 168 -230 h-92 z" fill="#c8a84b"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Amp Academy"><rect width="512" height="512" rx="112" fill="#F2A93B"/><path d="M277 43 85 299h128l-21 171 192-256h-128z" fill="#241606"/></svg>
